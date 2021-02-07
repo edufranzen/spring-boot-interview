@@ -1,0 +1,10 @@
+CREATE TABLE cliente (
+	id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(100) NOT NULL,
+	sexo CHAR(1) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	idade INT(3) NOT NULL,
+	id_cidade BIGINT(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE cliente ADD FOREIGN KEY (id_cidade) REFERENCES cidade (id);
